@@ -3,6 +3,9 @@ from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 
 from wiki.models import Page
+from django.contrib.auth.forms import UserCreationForm
+from django.urls import reverse_lazy
+from django.views.generic import CreateView
 
 
 class PageListView(ListView):
