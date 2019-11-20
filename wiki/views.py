@@ -6,7 +6,10 @@ from wiki.models import Page
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
+from django.http import HttpResponseRedirect
+from django.shortcuts import render
 
+from .forms import PageCreateForm
 
 class PageListView(ListView):
     """ Renders a list of all Pages. """
@@ -29,3 +32,15 @@ class PageDetailView(DetailView):
         return render(request, 'page.html', {
           'page': page
         })
+
+class PageCreateView(CreateView):
+  def get(self, request, *args, **kwargs):
+      context = {'form': PageCreateForm()}
+      return render(request, 'new.html', context)
+  def post(self, request, *args, **kwargs):
+    form = PageCreateForm(request.POST)
+    if form.is_valid():
+        page = form.save()
+        return HttpResponseRedirect(reverse_lazy('wiki-details-page', args=[page.slug]))
+    return render(request, 'new.html', {'form': form})
+ 
