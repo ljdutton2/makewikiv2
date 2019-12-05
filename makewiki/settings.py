@@ -29,6 +29,13 @@ ALLOWED_HOSTS = []
 
 DEFAULT_LOGOUT_URL = '/'
 
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+     os.path.join(BASE_DIR, "static"),
+ ]
+
+
 
 
 # Application definition
@@ -41,7 +48,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'wiki',
-    'accounts'
+    'accounts',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -129,7 +137,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # wiki app settings
 WIKI_PAGE_TITLE_MAX_LENGTH = 600
 
@@ -138,11 +146,13 @@ WIKI_PAGE_TITLE_MAX_LENGTH = 600
 LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/"
 
-EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
+EMAIL_BACKEND = "django.core.mail.backends–EmailBackend"
 EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
 
 # Required for Heroku
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+ALLOWED_HOSTS = ['localhost', 'makewiki-v2-ld.herokuapp.com']
 
 
 # PROTIP:
