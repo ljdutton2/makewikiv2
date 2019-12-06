@@ -29,15 +29,6 @@ ALLOWED_HOSTS = ['localhost', 'makewiki-v2-ld.herokuapp.com']
 
 DEFAULT_LOGOUT_URL = '/'
 
-STATIC_URL = '/static/'
-
-STATICFILES_DIRS = [
-     os.path.join(BASE_DIR, "static"),
- ]
-
-
-
-
 # Application definition
 
 INSTALLED_APPS = [
