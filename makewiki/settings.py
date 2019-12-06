@@ -25,7 +25,7 @@ SECRET_KEY = '1yct-t!2bnkgc7j59z+9cdd2k)@y+ftqor$!aya()3if^cnlo-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'make-wiki-v2-ld.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', 'make-wiki-v2-ld.herokuapp.com','127.0.0.1']
 
 DEFAULT_LOGOUT_URL = '/'
 

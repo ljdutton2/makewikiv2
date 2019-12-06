@@ -7,8 +7,7 @@ from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
 
 #from wiki.models import 
-from api.serializers import QuestionSerializer
-from api.serializers import ChoiceSerializer
+from api.serializer import PageSerializer
 
 class QuestionList(APIView):
     def get(self, request):
