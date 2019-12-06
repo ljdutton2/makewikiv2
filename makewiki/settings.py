@@ -25,7 +25,7 @@ SECRET_KEY = '1yct-t!2bnkgc7j59z+9cdd2k)@y+ftqor$!aya()3if^cnlo-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', 'makewiki-v2-ld.herokuapp.com']
 
 DEFAULT_LOGOUT_URL = '/'
 
@@ -157,9 +157,6 @@ EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
 
 # Required for Heroku
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
-ALLOWED_HOSTS = ['localhost', 'makewiki-v2-ld.herokuapp.com']
-
 
 # PROTIP:
 # Need to override settings? Create a local_settings.py file
