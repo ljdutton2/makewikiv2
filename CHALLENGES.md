@@ -82,8 +82,8 @@
 
 - [ ] Import the `PageForm` class from `forms.py`.
     - This `ModelForm` enables editing of an existing `Page` object in the database.
-- [ ]  On `GET`, render an edit form below the page details.
-- [ ]  On `POST`, check if the data in the form is valid.
+- [ x]  On `GET`, render an edit form below the page details.
+- [x ]  On `POST`, check if the data in the form is valid.
     - If `True`, save the data, and redirect back to the `DetailsView`.
     - If `False`, display all the errors in the template, above the form fields.
 - [ ] Instead of hard-coding the path to redirect to, use the `reverse` function to return the path.
