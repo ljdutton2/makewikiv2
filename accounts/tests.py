@@ -23,12 +23,12 @@ class PageListViewTests(TestCase):
         # Make some test data to be displayed on the page.
         user = User.objects.create()
 
-        Page.objects.create(title="My Test Page", content="test", author=user)
-        Page.objects.create(title="Another Test Page", content="test", author=user)
+        Page.objects.create(title="MyTestPage", content="test", author=user)
+        Page.objects.create(title="AnotherTestPage", content="test", author=user)
 
         # Issue a GET request to the MakeWiki homepage.
         # When we make a request, we get a response back.
-        response = self.client.get('/')
+        response = self.client.get('/AnotherTestPage', follow=True)
 
         # Check that the response is 200 OK.
         self.assertEqual(response.status_code, 200)
